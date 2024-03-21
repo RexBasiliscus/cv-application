@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Features:
 
-- General information form, that requires user to enter ones general info like name and contact information
-- Education information form, that requires user to enter information about his education
+- [Init] General information form, that requires user to enter ones general info like name and contact information
+- [Init] Education information form, that requires user to enter information about his education
 
-##
+Code maintenance:
 
-[0.1.0]:
+- [Issue #2](https://github.com/RexBasiliscus/cv-application/issues/2) Setup changelog
