@@ -14,4 +14,5 @@ Features:
 
 Code maintenance:
 
+- [Issue #1](https://github.com/RexBasiliscus/cv-application/issues/1) Changed local server to run on port 4200
 - [Issue #2](https://github.com/RexBasiliscus/cv-application/issues/2) Setup changelog
