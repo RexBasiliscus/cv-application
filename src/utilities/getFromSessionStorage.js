@@ -13,7 +13,7 @@ export const getEducationFromSessionStorage = () => {
   return storedEducation ? JSON.parse(storedEducation) : {
     schoolName: '',
     titleOfStudy: '',
-    startOfStudy: '01-01-2000',
-    endOfStudy: '01-01-2000'
+    startOfStudy: '2024-01-01',
+    endOfStudy: '2024-01-01'
   }
 }
