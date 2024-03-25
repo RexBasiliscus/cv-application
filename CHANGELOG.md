@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Init] General information form, that requires user to enter ones general info like name and contact information
 - [Init] Education information form, that requires user to enter information about his education
+- [Issue #10](https://github.com/RexBasiliscus/cv-application/issues/10) Introduced the date-fns library to handle dates
 
 ### Code maintenance:
 
