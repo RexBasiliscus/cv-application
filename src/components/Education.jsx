@@ -1,14 +1,31 @@
 import { keyToDisplayName, keyToDisplayType } from "../utilities/keyToDisplay";
+import { getEducationFromSessionStorage } from "../utilities/getFromSessionStorage";
+import { useState, useEffect } from "react";
 
-const Education = ({
-  handleInputChange,
-  education,
-  isEditable,
-  onClick,
-  handleSubmit,
-}) => {
+const Education = () => {
+  const [education, setEducation] = useState(getEducationFromSessionStorage());
+  const [isEditable, setIsEditable] = useState(true);
+
+  useEffect(() => {
+    sessionStorage.setItem("education", JSON.stringify(education));
+  }, [education]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name in education) {
+      setEducation({ ...education, [name]: value });
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted.");
+    setIsEditable(false);
+  };
+
   const educationArr = Object.entries(education);
-  // console.log(educationArr)
+  // console.log(educationArr);
 
   return (
     <section className="education__info">
@@ -45,7 +62,7 @@ const Education = ({
           ) : (
             <button
               className="edit-btn"
-              onClick={onClick}
+              onClick={() => setIsEditable(true)}
             >
               Edit
             </button>
