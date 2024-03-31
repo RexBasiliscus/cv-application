@@ -19,4 +19,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Bug-fixes:
 
+- [Issue #7](https://github.com/RexBasiliscus/cv-application/issues/7) Fixed the bug where state was shared between form components
 - [Issue #8](https://github.com/RexBasiliscus/cv-application/issues/8) Fixed where the form wasn't showing the correct default date
