@@ -20,12 +20,10 @@ const Education = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted.");
     setIsEditable(false);
   };
 
   const educationArr = Object.entries(education);
-  // console.log(educationArr);
 
   return (
     <section className="education__info">
