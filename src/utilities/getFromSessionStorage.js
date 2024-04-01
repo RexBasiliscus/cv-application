@@ -11,16 +11,6 @@ export const getPersonFromSessionStorage = () => {
         phone: "",
       };
 };
-  const storedPerson = sessionStorage.getItem("person");
-  return storedPerson
-    ? JSON.parse(storedPerson)
-    : {
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-      };
-};
 
 export const getEducationFromSessionStorage = () => {
   const storedEducation = sessionStorage.getItem("education");
@@ -29,8 +19,8 @@ export const getEducationFromSessionStorage = () => {
     : {
         schoolName: "",
         titleOfStudy: "",
-        startOfStudy: "2024-01-01",
-        endOfStudy: "2024-01-01",
+        startOfStudy: getTodaysFormattedDate,
+        endOfStudy: getTodaysFormattedDate,
       };
 };
 
@@ -41,8 +31,8 @@ export const getExperienceFromSessionStorage = () => {
     : {
         company: "",
         position: "",
-        startOfEmployment: "2024-01-01",
-        endOfEmployment: "2024-01-01",
+        startOfEmployment: getTodaysFormattedDate,
+        endOfEmployment: getTodaysFormattedDate,
         ongoing: false,
         description: "",
       };
