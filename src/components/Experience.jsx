@@ -47,8 +47,8 @@ const Experience = () => {
               >
                 <label htmlFor={key}>{keyToDisplayName[key]}: </label>
                 <textarea
-                  id="description"
-                  name="description"
+                  id={key}
+                  name={key}
                   rows="5"
                   cols="41"
                   placeholder={`Please type in your ${keyToDisplayName[key]}`}
@@ -65,7 +65,7 @@ const Experience = () => {
                 <label htmlFor={key}>{keyToDisplayName[key]}</label>
                 <input
                   type={keyToDisplayType[key]}
-                  id="ongoing"
+                  id={key}
                   name={key}
                   checked={value}
                   onChange={handleInputChange}
