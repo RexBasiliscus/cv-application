@@ -7,7 +7,6 @@ const GeneralInfo = () => {
   const [isEditable, setIsEditable] = useState(true);
 
   const personArr = Object.entries(person);
-  // console.log(personArr);
 
   useEffect(() => {
     sessionStorage.setItem("person", JSON.stringify(person));
@@ -23,7 +22,6 @@ const GeneralInfo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted.");
     setIsEditable(false);
   };
 
