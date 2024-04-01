@@ -1,4 +1,4 @@
-import { todaysDate } from "./formatDates";
+import { getTodaysFormattedDate } from "./getTodaysFormattedDate";
 
 export const getPersonFromSessionStorage = () => {
   const storedPerson = sessionStorage.getItem("person");
@@ -19,7 +19,7 @@ export const getEducationFromSessionStorage = () => {
     : {
         schoolName: "",
         titleOfStudy: "",
-        startOfStudy: todaysDate,
-        endOfStudy: todaysDate,
+        startOfStudy: getTodaysFormattedDate,
+        endOfStudy: getTodaysFormattedDate,
       };
 };
