@@ -1,4 +1,16 @@
+import { getTodaysFormattedDate } from "./getTodaysFormattedDate";
+
 export const getPersonFromSessionStorage = () => {
+  const storedPerson = sessionStorage.getItem("person");
+  return storedPerson
+    ? JSON.parse(storedPerson)
+    : {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+      };
+};
   const storedPerson = sessionStorage.getItem("person");
   return storedPerson
     ? JSON.parse(storedPerson)
