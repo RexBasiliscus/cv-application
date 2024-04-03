@@ -18,10 +18,14 @@ const Experience = () => {
     const { name, value } = e.target;
 
     if (name === "ongoing") {
-      setExperience({ ...experience, [name]: e.target.checked });
-    }
+      const checkbox = e.target;
+      const checked = checkbox.checked;
+      checkbox.setAttribute("checked", checked);
 
-    if (name in experience) {
+      checked ? (checkbox.value = true) : (checkbox.value = false);
+
+      setExperience({ ...experience, [name]: checked });
+    } else {
       setExperience({ ...experience, [name]: value });
     }
   };
@@ -67,7 +71,8 @@ const Experience = () => {
                   type={keyToDisplayType[key]}
                   id={key}
                   name={key}
-                  checked={value}
+                  value={value}
+                  {...([key].value && { checked: "checked" })}
                   onChange={handleInputChange}
                 />
               </div>
