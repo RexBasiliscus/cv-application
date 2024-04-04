@@ -7,6 +7,8 @@ const Experience = () => {
     getExperienceFromSessionStorage()
   );
   const [isEditable, setIsEditable] = useState(true);
+  const [cachedEndOfEmploymentValue, setCachedEndOfEmploymentValue] =
+    useState("");
 
   const experienceArr = Object.entries(experience);
 
@@ -20,11 +22,23 @@ const Experience = () => {
     if (name === "ongoing") {
       const checkbox = e.target;
       const checked = checkbox.checked;
-      checkbox.setAttribute("checked", checked);
 
-      checked ? (checkbox.value = true) : (checkbox.value = false);
-
-      setExperience({ ...experience, [name]: checked });
+      if (checked) {
+        checkbox.value = true;
+        setCachedEndOfEmploymentValue(experience.endOfEmployment);
+        setExperience({
+          ...experience,
+          [name]: checked,
+          endOfEmployment: "",
+        });
+      } else {
+        checkbox.value = false;
+        setExperience({
+          ...experience,
+          [name]: checked,
+          endOfEmployment: cachedEndOfEmploymentValue,
+        });
+      }
     } else {
       setExperience({ ...experience, [name]: value });
     }
@@ -55,6 +69,9 @@ const Experience = () => {
                   name={key}
                   rows="5"
                   cols="41"
+                  {...(isEditable
+                    ? { required: "required" }
+                    : { disabled: "disabled" })}
                   placeholder={`Please type in your ${keyToDisplayName[key]}`}
                   onChange={handleInputChange}
                 />
@@ -73,6 +90,27 @@ const Experience = () => {
                   name={key}
                   value={value}
                   {...([key].value && { checked: "checked" })}
+                  onChange={handleInputChange}
+                  {...(!isEditable && { disabled: "disabled" })}
+                />
+              </div>
+            );
+          } else if (key === "endOfEmployment") {
+            return (
+              <div
+                className="input-field"
+                key={key}
+              >
+                <label htmlFor={key}>{keyToDisplayName[key]}</label>
+                <input
+                  type={keyToDisplayType[key]}
+                  id={key}
+                  name={key}
+                  value={value}
+                  {...(experience.ongoing === false && isEditable
+                    ? { required: "required" }
+                    : { disabled: "disabled" })}
+                  placeholder={`Please type in your ${keyToDisplayName[key]}`}
                   onChange={handleInputChange}
                 />
               </div>
