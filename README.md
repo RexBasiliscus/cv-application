@@ -2,6 +2,8 @@
 
 ## Description
 
+The initial idea was evolved from a project assignment on [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application).
+
 This project aims to allow for a simple CV creation tool, where you can create CVs based on the input you provide. The CV is based on form inputs, divided between three components of General Info (your name, contact info), Education (your education) and Experience (work experience).
 
 Your information is then saved into browser storage and in the future, these functionalities will be added:
