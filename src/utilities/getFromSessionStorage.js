@@ -23,3 +23,17 @@ export const getEducationFromSessionStorage = () => {
         endOfStudy: getTodaysFormattedDate,
       };
 };
+
+export const getExperienceFromSessionStorage = () => {
+  const storedExperience = sessionStorage.getItem("experience");
+  return storedExperience
+    ? JSON.parse(storedExperience)
+    : {
+        company: "",
+        position: "",
+        startOfEmployment: getTodaysFormattedDate,
+        endOfEmployment: getTodaysFormattedDate,
+        ongoing: false,
+        description: "",
+      };
+};
