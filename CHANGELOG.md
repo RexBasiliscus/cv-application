@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Issue #1](https://github.com/RexBasiliscus/cv-application/issues/1) Changed local server to run on port 4200
 - [Issue #2](https://github.com/RexBasiliscus/cv-application/issues/2) Setup changelog
+- [Issue #3](https://github.com/RexBasiliscus/cv-application/issues/3) Updated the README file with project description
 
 ### Bug-fixes:
 
